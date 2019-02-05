@@ -18,20 +18,20 @@ import sys,os
 class GaivotaEmail(GaivotaHandler):
 	#GET handler
 	
-	@tornado.gen.coroutine
-#	@tornado.web.asynchronous
+#	@tornado.gen.coroutine
+	@tornado.web.asynchronous
 	def get(self):
 		print('seding email...')		
-		yield time.sleep(10)
+		time.sleep(10)
 		self.write(json.dumps('email sent.'))
 		print('email sent!')
 		self.finish()
 	
-	@tornado.gen.coroutine
-#	@tornado.web.asynchronous
+#	@tornado.gen.coroutine
+	@tornado.web.asynchronous
 	def post(self):
 		print('seding email...')
-		yield time.sleep(5)
+		time.sleep(5)
 	    self.write(json.dumps('email sent.'))
 		print('email sent!')
 		self.finish()
